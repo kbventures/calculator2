@@ -1,9 +1,3 @@
-
-
-
-
-
-
 function Calculator() {
     this.state = '';
     this.operandsCount = 0;
@@ -11,37 +5,31 @@ function Calculator() {
     this.operands = ['+', '-'];
 
     this.calculate = (char) => {
-
-
-
-        this.stateCheck = () => {
-            if (this.operands.includes(char)) {
-                this.operandsCount++;
-            }
-            if (this.operandsCount === 2) {
-                this.state = Function(state);
-            }
-        }
-
+        this.stateCheck(char);
         this.state += char;
-
-
-
 
     }
 
 
-    console.log(eval('2 + 2'));
-    // expected output: 4
 
-    console.log(eval(new String('2 + 2')));
-    // expected output: 2 + 2
-
-    console.log(eval('2 + 2') === eval('4'));
-    // expected output: true
-
-    console.log(eval('2 + 2') === eval(new String('2 + 2')));
-    // expected output: false
-
+    this.stateCheck = (char) => {
+        if (this.operands.includes(char)) {
+            this.operandsCount++;
+        }
+        if (this.operandsCount === 2) {
+            this.state = Function("return " + this.state)();
+        }
+    }
 
 }
+
+const calc = new Calculator();
+
+calc.calculate("1")
+calc.calculate("+")
+calc.calculate("1")
+calc.calculate("+")
+
+console.log(calc.state);
+
+
