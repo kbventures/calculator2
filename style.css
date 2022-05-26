@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 60%;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    padding: 1rem;
+
+}
+
+.screen {
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    text-align: right;
+    align-items: center;
+    padding-right: 20px;
+    font-size: 2rem;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 0 1 100%;
+    gap: 5px;
+}
+
+
+.button {
+    flex: 0 1 23%;
+    border-radius: 50%;
+    height: 60px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* 
+.container{
+    display: flex;
+    flex: 0 1 60%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width:400px;
+
+}
+
+
+
+
+.result,.buttons{
+    display: flex;
+    flex-wrap: wrap; 
+    flex: 0 1 100%;
+
+}
+
+.result{
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    background-color: #000000;
+}
+
+.button{
+ 
+    display: flex; 
+    flex: 0 1 25%;
+    justify-content: center;
+    background: -webkit-linear-gradient(top,#d2d2d2,#ddd);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.zero-btn{
+    flex-grow: 2; 
+} */
