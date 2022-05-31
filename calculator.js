@@ -24,7 +24,9 @@ function Calculator() {
     this.calculate = (char) => {
 
         if (this.stateCheck(char)) return this.state;
+        // console.log(this.state)
         this.state += char;
+        console.log(this.state)
         return this.state;
     }
 
@@ -33,13 +35,16 @@ function Calculator() {
     this.stateCheck = (char) => {
         if (this.operands.includes(char)) {
             this.currentOperandsCount++;
+            console.log(this.currentOperandsCount)
         }
         if (this.currentOperandsCount === 2) {
 
-            this.state.length
-
-            if (this.operands.includes(this.state[this.state.length])) {
-
+            if(this.operands.includes(char) && this.operands.includes(this.state.slice(-1)) ){
+                
+                this.state = this.state.slice(0,-1) + char;
+                this.currentOperandsCount = 1; 
+                console.log(this.state)
+                return true; 
             }
 
 
