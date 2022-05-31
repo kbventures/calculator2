@@ -18,8 +18,7 @@ function update(event) {
 function Calculator() {
 
     this.state = '';
-    this.operandsCount = 0;
-
+    this.currentOperandsCount = 0;
     this.operands = ['+', '-', '=', '/', '*'];
 
     this.calculate = (char) => {
@@ -33,17 +32,26 @@ function Calculator() {
 
     this.stateCheck = (char) => {
         if (this.operands.includes(char)) {
-            this.operandsCount++;
+            this.currentOperandsCount++;
         }
-        if (this.operandsCount === 2) {
+        if (this.currentOperandsCount === 2) {
+
+            this.state.length
+
+            if (this.operands.includes(this.state[this.state.length])) {
+
+            }
+
+
+
             if (char === '=') {
                 this.state = Function("return " + this.state)();
-                this.operandsCount = 0;
+                this.currentOperandsCount = 0;
                 return true;
             }
             this.state = Function("return " + this.state)();
             console.log(this.state)
-            this.operandsCount = 1;
+            this.currentOperandsCount = 1;
         }
     }
 
